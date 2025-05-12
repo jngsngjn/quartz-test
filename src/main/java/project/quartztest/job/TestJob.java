@@ -16,10 +16,11 @@ public class TestJob implements Job {
 
     @Override
     public void execute(JobExecutionContext jobContext) {
-        JobDataMap jobDataMap = jobContext.getJobDetail().getJobDataMap();
-        int value = jobDataMap.getInt(KEY);
-        log.info("value: {}", value);
-
-        jobDataMap.put(KEY, value + 1);
+        // JobDataMap jobDataMap = jobContext.getJobDetail().getJobDataMap();
+        // int value = jobDataMap.getInt(KEY);
+        // log.info("value: {}", value);
+        //
+        // jobDataMap.put(KEY, value + 1);
+        log.info("TestJob execute");
     }
 }

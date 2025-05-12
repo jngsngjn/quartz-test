@@ -85,4 +85,12 @@ public class InitService {
         result.append(suffix);
         return result.toString();
     }
+
+    public static Trigger createJobTrigger(JobKey jobKey, TriggerKey triggerKey, ScheduleBuilder<?> scheduleBuilder) {
+        return TriggerBuilder.newTrigger()
+            .forJob(jobKey)
+            .withIdentity(triggerKey)
+            .withSchedule(scheduleBuilder)
+            .build();
+    }
 }
